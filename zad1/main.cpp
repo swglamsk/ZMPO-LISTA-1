@@ -9,6 +9,8 @@ int main()
 	int what_to_do;
 	int index_of;
 	int type_table_length;
+	int type_index_of_value;
+	int type_value;
 	std::string type_name;
 
 	std::cout << "Podaj liczbe tablic ktore chcesz utowrzyc" << std::endl;
@@ -88,6 +90,13 @@ int main()
 			break;
 		case 7:
 			std::cout << "Podaj indeks obiektu ktoremu chcesz zmodyfikowac wartosc:" << std::endl;
+			std::cin >> index_of;
+			std::cout << "Podaj inkes komorki ktorej chcesz zmodyfikowac dane:" << std::endl;
+			std::cin >> type_index_of_value;
+			std::cout << "Podaj nowa wartosc:" << std::endl;
+			std::cin >> type_value;
+			array_of_tables.at(index_of).set_Value(type_value, type_index_of_value);
+			break;
 
 		case 8:
 			array_of_tables.clear();
