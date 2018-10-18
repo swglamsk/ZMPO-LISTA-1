@@ -1,11 +1,9 @@
-#include "stdafx.h"
 #include "CTABLE.h"
 #include <iostream>
 #include <algorithm>
 #include <sstream>
 const std::string CTABLE::DEFAULT_NAME = "DEFAULT";
 const int CTABLE::DEFAULT_LENGTH = 4;
-const int CTABLE::DEFAULT_VALUE = 1;
 CTABLE::CTABLE()
 {
 	name = DEFAULT_NAME;
@@ -24,7 +22,7 @@ CTABLE::CTABLE(std::string dir_name, int dir_table_length)
 	std::cout << "parametr:" << name << std::endl;
 }
 
-CTABLE::CTABLE(CTABLE &other)
+CTABLE::CTABLE(CTABLE  &other)
 {
 	table_length = other.table_length;
 	table = new int[table_length];
@@ -84,7 +82,7 @@ bool CTABLE::set_Value(int new_Value, int index)
 
 bool CTABLE::get_Value(int index, int * value)
 {
-	if (index_Check)
+	if (index_Check(index))
 	{
 		*value = *(table + index);
 		return true;
