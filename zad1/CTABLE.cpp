@@ -3,13 +3,12 @@
 #include <algorithm>
 #include <sstream>
 const std::string CTABLE::DEFAULT_NAME = "DEFAULT";
-const int CTABLE::DEFAULT_LENGTH = 4;
+const int CTABLE::DEFAULT_LENGTH = 0;
 CTABLE::CTABLE()
 {
 	name = DEFAULT_NAME;
 	table_length = DEFAULT_LENGTH;
 	table = new int[table_length];
-	//std::fill_n(table, table_length, DEFAULT_VALUE);
 	std::cout << "bezp:" << name << std::endl;
 }
 
@@ -18,11 +17,10 @@ CTABLE::CTABLE(std::string dir_name, int dir_table_length)
 	name = dir_name;
 	table_length = dir_table_length;
 	table = new int[table_length];
-	//std::fill_n(table, table_length, DEFAULT_VALUE);
 	std::cout << "parametr:" << name << std::endl;
 }
 
-CTABLE::CTABLE(CTABLE  &other)
+CTABLE::CTABLE(const CTABLE  &other) 
 {
 	table_length = other.table_length;
 	table = new int[table_length];
@@ -48,13 +46,20 @@ std::string CTABLE::get_Name()
 
 }
 
-void CTABLE::set_Table_Length(int new_Table_Length)
-{
-	int* new_Table = new int[new_Table_Length];
-	memcpy(new_Table, table, std::min(new_Table_Length, table_length) * sizeof(int));
-	delete[] table;
-	table = new_Table;
-	table_length = new_Table_Length;
+bool CTABLE::set_Table_Length(int new_Table_Length)
+{	
+	if (new_Table_Length <= 0)
+		return false;
+	else
+	{
+		int* new_Table = new int[new_Table_Length];
+		memcpy(new_Table, table, std::min(new_Table_Length, table_length) * sizeof(int));
+		delete[] table;
+		table = new_Table;
+		table_length = new_Table_Length;
+		return true;
+	}
+	
 }
 
 int CTABLE::get_Table_Length()
@@ -94,7 +99,7 @@ bool CTABLE::get_Value(int index, int * value)
 std::string CTABLE::get_Info()
 {
 	std::string values;
-	for (int i = 0; i <= table_length; i++)
+	for (int i = 0; i < table_length; i++)
 	{
 		std::string string_value;
 		std::ostringstream convert;
@@ -107,4 +112,16 @@ std::string CTABLE::get_Info()
 	convert << table_length;
 	string_table_length = convert.str();
 	return "(" + name + " " + "len:" + string_table_length + " " + "values:" + values + ")";
+}
+
+void CTABLE::push(int new_value) 
+{
+	int* new_table = new int[table_length + 1];
+	new_table[0] = new_value;
+	for (int i = 0; i <= table_length; i++)
+		new_table[i + 1] = table[i];
+	delete[] table;
+	table = new_table;
+	table_length = table_length + 1;
+	
 }
