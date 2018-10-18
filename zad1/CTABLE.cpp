@@ -3,13 +3,16 @@
 #include <algorithm>
 #include <sstream>
 const std::string CTABLE::DEFAULT_NAME = "DEFAULT";
-const int CTABLE::DEFAULT_LENGTH = 0;
+const int CTABLE::DEFAULT_LENGTH = 10;
+const int CTABLE::DEFAULT_VALUE = 1;
 CTABLE::CTABLE()
 {
 	name = DEFAULT_NAME;
 	table_length = DEFAULT_LENGTH;
 	table = new int[table_length];
 	std::cout << "bezp:" << name << std::endl;
+	for (int i = 0; i < table_length; i++)
+		table[i] = DEFAULT_VALUE;
 }
 
 CTABLE::CTABLE(std::string dir_name, int dir_table_length)
@@ -18,6 +21,8 @@ CTABLE::CTABLE(std::string dir_name, int dir_table_length)
 	table_length = dir_table_length;
 	table = new int[table_length];
 	std::cout << "parametr:" << name << std::endl;
+	for (int i = 0; i < table_length; i++)
+		table[i] = DEFAULT_VALUE;
 }
 
 CTABLE::CTABLE(const CTABLE  &other) 
@@ -48,12 +53,19 @@ std::string CTABLE::get_Name()
 
 bool CTABLE::set_Table_Length(int new_Table_Length)
 {	
-	if (new_Table_Length <= 0)
+	if (new_Table_Length < 0)
 		return false;
 	else
 	{
 		int* new_Table = new int[new_Table_Length];
 		memcpy(new_Table, table, std::min(new_Table_Length, table_length) * sizeof(int));
+		if (new_Table_Length > table_length)
+		{
+			for (int i = table_length; i < new_Table_Length; i++) 
+			{
+				new_Table[i] = DEFAULT_VALUE;
+			}
+		}
 		delete[] table;
 		table = new_Table;
 		table_length = new_Table_Length;
