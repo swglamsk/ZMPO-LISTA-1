@@ -2,8 +2,15 @@
 #include "CTable.h"
 #include <vector>
 #include <string>
-
+#include "MENU.h"
+#include "MENU_COMMAND.h"
 int main()
+{
+	MENU* menu = new MENU();
+	menu->addMenuItem(new MENU_COMMAND());
+	menu->Run();
+}
+/*int main()
 {
 	int number_of_tables;
 	int what_to_do;

@@ -147,11 +147,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="COMMAND.h" />
     <ClInclude Include="CTABLE.h" />
+    <ClInclude Include="MENU.h" />
+    <ClInclude Include="MENUITEM.h" />
+    <ClInclude Include="MENU_COMMAND.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="COMMAND.cpp" />
     <ClCompile Include="CTABLE.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MENU.cpp" />
+    <ClCompile Include="MENUITEM.cpp" />
+    <ClCompile Include="MENU_COMMAND.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

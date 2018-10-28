@@ -18,12 +18,36 @@
     <ClInclude Include="CTABLE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MENU.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MENUITEM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="COMMAND.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MENU_COMMAND.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CTABLE.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MENU.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COMMAND.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MENU_COMMAND.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MENUITEM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
