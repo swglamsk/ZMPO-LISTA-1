@@ -11,23 +11,29 @@ MENU::MENU()
 }
 
 
+
 MENU::~MENU()
 {
-	delete menu;
+	for (MENUITEM* obj : menuItems) {
+		delete obj;
+	}
+	menuItems.clear();
+	std::cout << "Wyczyszczono" << std::endl;
 }
 
 void MENU::Run()
 {
 	while (true)
 	{
-		std::cout << this << std::endl;
+		std::cout << this->name << '(' << this->command << ')' << std::endl;
 		for (auto menuItem : MENU::menuItems)
 		{
 			std::cout << menuItem->name << '(' << menuItem->command << ')' << std::endl;
 		}
 		std::string inputCommand;
 		std::cin >> inputCommand;
-		if (inputCommand == "back") return;
+		if (inputCommand == "back") 
+			return;
 		bool doesCommandExist = false;
 		for (auto menuItem : MENU::menuItems) 
 		{

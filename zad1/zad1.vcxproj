@@ -147,6 +147,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="add_command.h" />
+    <ClInclude Include="change_length_command.h" />
+    <ClInclude Include="class_temp.h" />
     <ClInclude Include="COMMAND.h" />
     <ClInclude Include="CTABLE.h" />
     <ClInclude Include="MENU.h" />
@@ -154,6 +157,8 @@
     <ClInclude Include="MENU_COMMAND.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="add_command.cpp" />
+    <ClCompile Include="change_length_command.cpp" />
     <ClCompile Include="COMMAND.cpp" />
     <ClCompile Include="CTABLE.cpp" />
     <ClCompile Include="main.cpp" />

@@ -30,6 +30,15 @@
     <ClInclude Include="MENU_COMMAND.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="add_command.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="class_temp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="change_length_command.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CTABLE.cpp">
@@ -48,6 +57,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MENUITEM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="add_command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="change_length_command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

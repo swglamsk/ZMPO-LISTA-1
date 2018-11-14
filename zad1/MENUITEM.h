@@ -7,6 +7,6 @@ public:
 	std::string name;
 public:
 	virtual void Run() = 0;
-	virtual ~MENUITEM();
+	virtual ~MENUITEM() {}
 };
 

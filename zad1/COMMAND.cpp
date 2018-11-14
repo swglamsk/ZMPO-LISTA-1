@@ -1,4 +1,5 @@
 #include "COMMAND.h"
+#include <iostream>
 
 
 
@@ -12,6 +13,6 @@ COMMAND::~COMMAND()
 }
 void COMMAND::run_command()
 {
-
+	std::cout << "Default" << std::endl;
 }
 

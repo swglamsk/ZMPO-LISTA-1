@@ -4,11 +4,27 @@
 #include <string>
 #include "MENU.h"
 #include "MENU_COMMAND.h"
+#include "add_command.h"
+#include "change_length_command.h"
 int main()
-{
+{	
+
 	MENU* menu = new MENU();
-	menu->addMenuItem(new MENU_COMMAND());
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("1. Okresl dlugosc tablicy dla dowolnego obiektu CTable", "changeL", new change_length_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
+	menu->addMenuItem(new MENU_COMMAND("0. Stworz nowy obiekt CTable", "add", new add_command()));
 	menu->Run();
+	delete menu;
 }
 /*int main()
 {
@@ -150,4 +166,4 @@ int main()
 							
 		}
 	}
-}
+}*/
